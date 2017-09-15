@@ -1,0 +1,42 @@
+<div class="body-box">
+
+ <app-modal-window-price [selectDish]="chooseDish" (onChanged)="onChanged($event)"></app-modal-window-price>
+
+
+<div class="container">
+
+<div class="row dishes bgDishes">
+  <br><br><br>
+	<div class="col-lg-4 col-md-6 conteinerDishes"
+		*ngFor="let dish of dishes">
+		<div class="card-container">
+			<div class="card-avatar">
+				<img src={{dish.imgURL}} alt={{dish.name}} class="user-image">
+			</div>
+			<div class="card-calendar">
+        <h6>Avaliable on </h6>
+        <p>
+          {{dish.calendar1}} - {{dish.calendar2}}
+        </p>
+			</div>
+			<div class="card-info">
+        <div class="col-lg-6 col-md-6">
+          <h4 class="nameDish noMargin">{{dish.name}}</h4>
+        </div>
+        <div class="col-lg-6 col-md-6">
+          <h5>Price: {{dish.price}}$</h5>
+        </div>
+			</div>
+			 <div class="card-user-button">
+    			<div class="text-center">
+					<button type="button" class="btn btn-md btn-success"
+						data-toggle="modal" data-target="#myModal"
+						(click)="modalWindowPrice(dish)">Update</button>
+				</div>
+  			</div>
+		</div>
+
+	</div>
+</div>
+</div>
+</div>

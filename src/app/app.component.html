@@ -1,0 +1,34 @@
+
+<head>
+<link rel="stylesheet" href="/assets/images/foundation.min.css">
+
+</head>
+
+
+<body>
+
+  <div class="navbar navbar-inverse navbar-fixed-top wrap">
+    <div class="container">
+      <div class="navbar-header">
+        <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">-->
+        <!--<span class="icon-bar"></span>-->
+        <!--<span class="icon-bar"></span>-->
+        <!--<span class="icon-bar"></span>-->
+        <!--</button>-->
+        <a href="#" class="navbar-brand">Siesta Italiana</a>
+      </div>
+      <!--<div class="navbar-collapse collapse">-->
+      <ul class="nav navbar-nav navbar-right">
+        <li><a routerLink="/add-dish" routerLinkActive="active" >Chef page</a></li>
+        <li><a routerLink="/edit-dish" routerLinkActive="active">Cook page</a></li>
+        <li><a routerLink="/edit-dish-price" routerLinkActive="active">Admin Page</a></li>
+      </ul>
+      <!--</div>-->
+    </div>
+  </div>
+
+
+	<router-outlet></router-outlet>
+
+	<app-restaurant-footer></app-restaurant-footer>
+</body>

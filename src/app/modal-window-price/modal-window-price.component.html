@@ -1,0 +1,90 @@
+<div class="body-box">
+
+<div id="myModal" class="modal fade" tabindex="-1">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title text-center">
+					Update name: <span class="name-change-dishes">{{selectDish.name}}</span>
+				</h4>
+			</div>
+			<div class="modal-body">
+				<form #f="ngForm" (ngSubmit)="onSubmit(f.value); f.value=''">
+
+					<div class="row none">
+						<div class="col-lg-3 col-md-3 columns">
+							<label for="name" class="name-input">Input new name</label>
+						</div>
+						<div class="col-lg-9 col-md-9 columns">
+							<input type="text" id="name" [(ngModel)]="selectDish.name"
+								placeholder={{selectDish.name}} maxlength="10" name="name">
+
+						</div>
+
+					</div>
+
+
+					<input class="none" type="text" id="id" required name="id"
+						[(ngModel)]="selectDish.id" placeholder={{selectDish.id}}>
+
+					<input class="none" type="text" id={{selectDish.id}} required
+						name="imgURL" [(ngModel)]="selectDish.imgURL"
+						placeholder={{selectDish.imgURL}}>
+
+
+
+
+					<div class="row">
+
+						<div class="col-lg-12 columns">
+							<div class="input-group">
+								<span class="input-group-label">
+								</span> <input type="number" required name="price"
+									class="input-group-field name-input" [(ngModel)]="selectDish.price"
+									placeholder={{selectDish.price}}>
+							</div>
+						</div>
+					</div>
+
+
+
+
+					<div class="row">
+						<div class="small-6 columns">
+							<div class="input-group">
+								<span class="input-group-label">
+								</span>
+								<p-calendar [(ngModel)]="selectDish.calendar1"
+									dateFormat="dd.mm.yy" dataType="string" [minDate]="minDate"
+									name="calendar1" (onSelect)="selectDate($event)"
+									[readonlyInput]="true" (onFocus)="focus($event)" [locale]="en"
+									placeholder="Date from" styleClass="input-group-field"
+									inputStyleClass="form-control" class="input-group-field"></p-calendar>
+							</div>
+						</div>
+
+
+						<div class="small-6 columns">
+							<div class="input-group">
+								<span class="input-group-label">
+								</span> <input type="text" readonly name="calendar2"
+									[(ngModel)]="selectDish.calendar2" placeholder="Date to"
+									class="input-group-field colorInputCalendar">
+							</div>
+
+						</div>
+					</div>
+
+
+					<div class="button-modal text-center">
+						<button type="submit" class="btn btn-md btn-success">Update</button>
+						<button class="btn btn-md btn-danger" type="button"
+							data-dismiss="modal" #closeBtn>Close</button>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer"></div>
+		</div>
+	</div>
+</div>
+</div>

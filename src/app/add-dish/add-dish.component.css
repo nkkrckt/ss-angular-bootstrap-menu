@@ -1,0 +1,74 @@
+
+.nameDish::first-letter {
+	text-transform: capitalize;
+	font-weight: bold;
+}
+ .nameDish {
+	font-weight: bold;
+	color: rgb(49, 42, 39);
+}
+
+.conteinerDishes {
+	margin-bottom: 10px;
+}
+
+.captionDishes {
+	background-color: rgb(49, 42, 39);
+	color: white;
+	margin-bottom: 70px;
+}
+
+.bgDishes {
+	background-color: rgba(118, 147, 237, 0.6);
+}
+
+.dishes {
+	padding-top: 130px;
+	padding-bottom: 70px;
+}
+
+
+.noMargin {
+	margin: 0;
+}
+
+.card-container {
+	margin-bottom: 5rem;
+	background-color: #d6deed; overflow : hidden;
+	padding: 0;
+	border-radius: 0;
+	overflow: hidden;
+}
+
+.card-container:hover {
+  box-shadow: 0 0 10px grey;
+}
+
+.card-container .card-avatar .user-image {
+	display: block;
+	margin: auto;
+	border-radius: 20%;
+	width: 20rem;
+	height: 20rem;
+	padding: 0.5rem;
+}
+
+.card-container:hover {
+	-webkit-transform: scale(1.03);
+	-ms-transform: scale(1.03);
+	transform: scale(1.03);
+}
+
+.card-container .card-info {
+	padding-top: 0.5rem;
+	text-align: center;
+	font-weight: bold;
+	color: rgb(49, 42, 39);
+}
+
+.card-container .card-calendar {
+	text-align: center;
+	padding-top: 0.9rem;
+	padding-bottom: 0.1rem;
+	font-weight: bold;
+}

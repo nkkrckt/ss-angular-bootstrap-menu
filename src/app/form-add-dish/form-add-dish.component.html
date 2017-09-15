@@ -1,0 +1,93 @@
+<form [formGroup]="myForm" #f="ngForm"
+	(ngSubmit)="onSubmit(f.value); f.value='';myForm.reset();" class="form-horizontal">
+
+	<div class="control-group">
+
+				<label class="control-label" for="dishName">Name</label>
+        <div class="controls">
+          <input id="dishName" type="text" maxlength="10" class="input-group-field"
+                 formControlName="name" name="name" ngModel>
+        </div>
+  </div>
+
+				<div>
+					<div data-closable class="alert-box callout alert"
+						*ngIf="myForm.controls['name'].invalid && myForm.controls['name'].touched">
+						<div class="text-left messeng">
+							Incorrect name. Please try again.
+						</div>
+
+						<button class="close-button" aria-label="Dismiss alert"
+							type="button" data-close>
+							<span aria-hidden="true" class="cloesMesseng">x</span>
+						</button>
+					</div>
+				</div>
+
+				<div class="control-group">
+          <label class="control-label" for="dishUrl">URL</label>
+					 <input id="dishUrl" type="url" required name="imgURL" ngModel
+						class="input-group-field" maxlength="200" formControlName="imgURL">
+				</div>
+
+				<div data-closable class="alert-box callout alert"
+					*ngIf="myForm.controls['imgURL'].invalid && myForm.controls['imgURL'].touched">
+					<div class="text-left messeng">
+						Incorrect url. Please try again.
+					</div>
+
+					<button class="close-button" aria-label="Dismiss alert"
+						type="button" data-close>
+						<span aria-hidden="true" class="cloesMesseng">x</span>
+					</button>
+				</div>
+
+				<div class="control-group">
+          <label class="control-label" for="dishPrice">Price</label>
+					 <input id="dishPrice" type="number" required name="price" ngModel
+						class="input-group-field" formControlName="price">
+				</div>
+
+				<div data-closable class="alert-box callout alert"
+					*ngIf="myForm.controls['price'].invalid && myForm.controls['price'].touched">
+					<div class="text-left messeng">
+						Incorrect price. Please try again.
+					</div>
+
+					<button class="close-button" aria-label="Dismiss alert"
+						type="button" data-close>
+						<span aria-hidden="true" class="cloesMesseng">x</span>
+					</button>
+				</div>
+
+			<div class="col-lg-12 text-center nameCalendar"><label></label>Calendar</div>
+
+		<div class="row">
+			<div class=" ">
+				<div class="input-group">
+					<p-calendar [(ngModel)]="date1" formControlName="calendar1"
+						dateFormat="dd.mm.yy" dataType="string" [minDate]="minDate"
+						(onSelect)="selectDate($event)" [readonlyInput]="true"
+						[locale]="en" placeholder="Date from"
+						styleClass="input-group-field" inputStyleClass="form-control"
+						class="input-group-field"></p-calendar>
+				</div>
+			</div>
+
+
+			<div class="">
+				<div class="input-group">
+          <input type="text" readonly id="calendar2" name="calendar2"
+						[(ngModel)]="date2" formControlName="calendar2"
+						placeholder="Date to" class="input-group-field">
+				</div>
+
+			</div>
+
+			<div class="col-lg-12 text-center closeButton">
+				<button type="submit" class="button large expanded"
+					[disabled]="myForm.invalid">Add dish</button>
+			</div>
+	</div>
+
+</form>
