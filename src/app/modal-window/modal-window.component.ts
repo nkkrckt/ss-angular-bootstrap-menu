@@ -1,5 +1,5 @@
 import {Component, ViewChild, EventEmitter, Input, Output, ElementRef} from '@angular/core';
-import {FormsModule, FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms'
+import {FormsModule, FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
 import {Dish} from '../dish';
 
 @Component({
@@ -18,15 +18,15 @@ export class ModalWindowComponent {
 
         this.myFormModal = new FormGroup({
 
-            "name": new FormControl("", [
+            'name': new FormControl('', [
                 Validators.required,
-                Validators.pattern("^[a-zA-Z\s-]+$")
+                Validators.pattern('^[a-zA-Z\s-]+$')
             ]),
-            "imgURL": new FormControl(),
-            "id": new FormControl(),
-            "price": new FormControl(),
-            "calendar1": new FormControl(),
-            "calendar2": new FormControl()
+            'imgURL': new FormControl(),
+            'id': new FormControl(),
+            'price': new FormControl(),
+            'calendar1': new FormControl(),
+            'calendar2': new FormControl()
         });
     }
 

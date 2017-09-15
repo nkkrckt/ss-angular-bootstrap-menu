@@ -11,11 +11,14 @@ import {Dish} from '../dish';
 })
 export class EditDishComponent implements OnInit {
 
-  name = {};
-
-  modalWindow(dish): any {this.name = dish;}
 
   dishes: Dish[];
+
+  name = {};
+  modalName(dish): any {
+    this.name = dish;
+    console.log(dish);
+  }
 
 
   constructor(private dishService: DishService) {}
@@ -28,8 +31,9 @@ export class EditDishComponent implements OnInit {
       });
   }
 
-  onChanged(form) {
+  onChangedForm(form) {
     this.dishService.update(form);
+    console.log('form');
   }
 
 

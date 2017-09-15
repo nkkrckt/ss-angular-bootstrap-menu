@@ -1,6 +1,6 @@
 <div class="body-box">
 
-<app-modal-window [dishName]="name" (onChanged)="onChanged($event)"></app-modal-window>
+<app-modal-window [dishName]="name" (onChanged)="onChangedForm($event)" ></app-modal-window>
 
 
 
@@ -31,9 +31,9 @@
 			</div>
 			 <div class="card-user-button">
     			<div class="text-center col-lg-12">
-            <button type="button" class="btn btn-md btn-success" data-toggle="modal" data-target="#myModal" (click)="modalWindow(dish)">Update</button>
+            <button type="button" class="btn btn-md btn-success" data-toggle="modal" data-target="#myModal" (click)="modalName(dish)">Update</button>
             <button type="button" class="btn btn-md btn-danger" (click)="delete(dish); $event.stopPropagation()">Delete</button>
-				</div>
+          </div>
   			</div>
 		</div>
 
